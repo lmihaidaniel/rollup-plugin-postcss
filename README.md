@@ -88,6 +88,22 @@ import style from './style.css';
 
 console.log(style.className); // .className_echwj_1
 ```
+You also can import only a specific CSS className like this:
+
+```js
+import {className} from './style.css';
+
+console.log(className); // .className_echwj_2
+```
+Also, note that all your dashed class names will be transformed to camlCased one when it be individually imported, but the original will not be removed from the locals. For example:
+
+```css
+.class-name {}
+```
+```js
+import style, { className } from './style.css';
+console.log(style['class-name'] === className) // true
+```
 
 ### Extract CSS
 
